@@ -1,0 +1,9 @@
+﻿  zadanie1.cpp
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(41): warning C4305: "inicjowanie": obcięcie z "double" do "GLfloat"
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(144): warning C4305: "+=": obcięcie z "double" do "GLfloat"
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(149): warning C4305: "-=": obcięcie z "double" do "GLfloat"
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(210): warning C4305: "argument": obcięcie z "double" do "GLfloat"
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(212): warning C4305: "argument": obcięcie z "double" do "GLfloat"
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(214): warning C4305: "argument": obcięcie z "double" do "GLfloat"
+c:\users\user\desktop\grafika\zajecia 3\zadanie1\zadanie1\zadanie1.cpp(216): warning C4305: "argument": obcięcie z "double" do "GLfloat"
+  zadanie1.vcxproj -> C:\Users\user\Desktop\Grafika\Zajecia 3\zadanie1\Debug\zadanie1.exe
