@@ -8,8 +8,8 @@
 
 enum
 {
-	WIRESPHERE,
-	SOLIDSPHERE,
+	WIRETetrahedron,
+	SOLIDTetrahedron,
 
 	BRASS, // mosiądz
 	BRONZE, // brąz
@@ -38,7 +38,7 @@ enum
 
 // tryb wyświetlania piramidy
 
-int sphereMode = SOLIDSPHERE;
+int TetrahedronMode = SOLIDTetrahedron;
 
 // aspekt obrazu
 
@@ -90,7 +90,7 @@ GLfloat light_position[4] =
 };
 
 
-void GenerateWireSphere_NxN(int n)
+void GenerateWireTetrahedron_NxN(int n)
 {
 	bool Down = true;
 
@@ -115,7 +115,7 @@ void GenerateWireSphere_NxN(int n)
 	}
 }
 
-void DrawPiramideWireSphere(int level)
+void DrawPiramideWireTetrahedron(int level)
 {
 	float xy = 0.0;
 	float z = 5.0;
@@ -124,14 +124,14 @@ void DrawPiramideWireSphere(int level)
 	{
 		glPushMatrix();
 		glTranslatef(xy, xy, z);
-		GenerateWireSphere_NxN(i + 1);
+		GenerateWireTetrahedron_NxN(i + 1);
 		glPopMatrix();
 		xy += 0.5;
 		z--;
 	}
 }
 
-void GenerateSolidSphere_NxN(int n)
+void GenerateSolidTetrahedron_NxN(int n)
 {
 	bool Down = true;
 
@@ -156,7 +156,7 @@ void GenerateSolidSphere_NxN(int n)
 	}
 }
 
-void DrawPiramideSolidSphere(int level)
+void DrawPiramideSolidTetrahedron(int level)
 {
 	float xy = 0.0;
 	float z = 5.0;
@@ -165,7 +165,7 @@ void DrawPiramideSolidSphere(int level)
 	{
 		glPushMatrix();
 		glTranslatef(xy, xy, z);
-		GenerateSolidSphere_NxN(i + 1);
+		GenerateSolidTetrahedron_NxN(i + 1);
 		glPopMatrix();
 		xy += 0.5;
 		z--;
@@ -231,15 +231,15 @@ void Display()
 	// przywrócenie pierwotnej macierzy modelowania
 	glPopMatrix();
 
-	// rysowanie piramidy (tryb WIRESPHERE i SOLIDSPHERE)
-	switch (sphereMode)
+	// rysowanie piramidy (tryb WIRETetrahedron i SOLIDTetrahedron)
+	switch (TetrahedronMode)
 	{
-	case SOLIDSPHERE:
-		DrawPiramideSolidSphere(10);
+	case SOLIDTetrahedron:
+		DrawPiramideSolidTetrahedron(10);
 		break;
 
-	case WIRESPHERE:
-		DrawPiramideWireSphere(10);
+	case WIRETetrahedron:
+		DrawPiramideWireTetrahedron(10);
 		break;
 	}
 
@@ -369,14 +369,14 @@ void Menu(int value)
 	switch (value)
 	{
 		// tryb - wire
-	case WIRESPHERE:
-		sphereMode = WIRESPHERE;
+	case WIRETetrahedron:
+		TetrahedronMode = WIRETetrahedron;
 		Display();
 		break;
 
 		// tryb - solid
-	case SOLIDSPHERE:
-		sphereMode = SOLIDSPHERE;
+	case SOLIDTetrahedron:
+		TetrahedronMode = SOLIDTetrahedron;
 		Display();
 		break;
 
@@ -629,8 +629,8 @@ int main(int argc, char *argv[])
 	glutAddMenuEntry("Czarna guma", BLACK_RUBBER);
 
 	int MenuVersion = glutCreateMenu(Menu);
-	glutAddMenuEntry("Wersja szkieletowa", WIRESPHERE);
-	glutAddMenuEntry("Wersja pelna", SOLIDSPHERE);
+	glutAddMenuEntry("Wersja szkieletowa", WIRETetrahedron);
+	glutAddMenuEntry("Wersja pelna", SOLIDTetrahedron);
 
 	// menu główne
 	glutCreateMenu(Menu);
